@@ -1,8 +1,8 @@
 package com.grzeluu.habittracker.util.datetime
 
-import kotlinx.datetime.Clock
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
+import kotlin.time.Clock.System
 
 
-fun getCurrentDate() = Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault()).date
+fun getCurrentDate() = System.now().toLocalDateTime(TimeZone.currentSystemDefault()).date

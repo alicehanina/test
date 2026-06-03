@@ -1,6 +1,5 @@
 plugins {
     id(libs.plugins.android.application.get().pluginId)
-    id(libs.plugins.kotlin.android.get().pluginId)
     id(libs.plugins.kotlin.compose.get().pluginId)
     id(libs.plugins.google.ksp.get().pluginId)
     id(libs.plugins.kotlin.serialization.get().pluginId)
@@ -8,12 +7,12 @@ plugins {
 
 android {
     namespace = "com.grzeluu.habittracker"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.grzeluu.habittracker"
         minSdk = 26
-        targetSdk = 35
+        targetSdk = 36
         versionCode = 1
         versionName = "1.0"
 

@@ -41,6 +41,7 @@ import com.grzeluu.habittracker.util.numbers.formatFloat
 import kotlinx.datetime.Clock
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
+import kotlin.time.Clock.System
 
 @Composable
 fun HabitCard(
@@ -153,7 +154,7 @@ fun HabitCardPreviewDone1() {
                     desiredValue = 2.5f,
                 ),
                 dailyHistoryEntry = HabitHistoryEntry(
-                    date = Clock.System.now().toLocalDateTime(timeZone = TimeZone.currentSystemDefault()).date,
+                    date = System.now().toLocalDateTime(timeZone = TimeZone.currentSystemDefault()).date,
                     currentEffort = 2.5f,
                     note = null,
                 ),
@@ -180,7 +181,7 @@ fun HabitCardPreviewAlmostDone1() {
                     desiredValue = 5f,
                 ),
                 dailyHistoryEntry = HabitHistoryEntry(
-                    date = Clock.System.now().toLocalDateTime(timeZone = TimeZone.currentSystemDefault()).date,
+                    date = System.now().toLocalDateTime(timeZone = TimeZone.currentSystemDefault()).date,
                     currentEffort = 4f,
                     note = null,
                 ),
@@ -207,7 +208,7 @@ fun HabitCardPreviewAlmostDone2() {
                     desiredValue = 5f,
                 ),
                 dailyHistoryEntry = HabitHistoryEntry(
-                    date = Clock.System.now().toLocalDateTime(timeZone = TimeZone.currentSystemDefault()).date,
+                    date = System.now().toLocalDateTime(timeZone = TimeZone.currentSystemDefault()).date,
                     currentEffort = 2.5f,
                     note = null,
                 ),

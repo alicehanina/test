@@ -24,7 +24,7 @@ class GetDailyHabitInfosUseCase(
     )
 
     override fun execute(params: Request): Flow<Result<List<DailyHabitInfo>, BaseError>> = flow {
-        val day = Day.get(params.date.dayOfWeek.value)
+        val day = Day.get(params.date.dayOfWeek.ordinal + 1)
         emitAll(habitRepository.getDailyHabitInfos(
             day = day,
             dateTime = params.date

@@ -112,7 +112,7 @@ private fun DailyHabitsContent(
             if (date == getCurrentDate()) stringResource(R.string.today_habits)
             else stringResource(
                 R.string.day_habits,
-                Day.get(date.dayOfWeek.value).mapToUiText(isShort = false).asString()
+                Day.get(date.dayOfWeek.ordinal + 1).mapToUiText(isShort = false).asString()
             )
         )
         LazyColumn {

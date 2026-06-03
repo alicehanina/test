@@ -72,11 +72,11 @@ class HomeViewModel(
     private fun initDays() {
         loadingState.incrementTasksInProgress()
         val today = selectedDay.value
-        val currentDayOfWeek = today.dayOfWeek.value
+        val currentDayOfWeek = today.dayOfWeek.ordinal
         val days = mutableListOf<LocalDate>()
 
         for (i in 0..6) {
-            val dayDate = today.plus(i - (currentDayOfWeek - 1), DateTimeUnit.DAY)
+            val dayDate = today.plus(i - (currentDayOfWeek), DateTimeUnit.DAY)
             days.add(dayDate)
         }
         _daysOfWeek.value = days.toList()

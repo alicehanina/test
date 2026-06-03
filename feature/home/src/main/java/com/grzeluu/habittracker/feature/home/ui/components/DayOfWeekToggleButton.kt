@@ -82,7 +82,7 @@ fun DayOfWeekToggleButton(
             )
             Text(
                 modifier = Modifier.padding(bottom = 8.dp),
-                text = Day.get(date.dayOfWeek.value).mapToUiText().asString(),
+                text = Day.get(date.dayOfWeek.ordinal + 1).mapToUiText().asString(),
                 style = TextStyle.Default.copy(fontWeight = FontWeight.Medium)
             )
         }

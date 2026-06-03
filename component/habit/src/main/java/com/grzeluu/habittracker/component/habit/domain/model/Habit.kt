@@ -35,7 +35,7 @@ data class Habit(
         val sortedHistory = history.sortedByDescending { it.date }
         var currentStreak = 0
         var lastDate = currentDate
-        fun lastDateIsNotDesirable() = !desirableDays.contains(Day.get(lastDate.dayOfWeek.value))
+        fun lastDateIsNotDesirable() = !desirableDays.contains(Day.get(lastDate.dayOfWeek.ordinal + 1))
 
         for (entry in sortedHistory) {
             while (lastDateIsNotDesirable()) {

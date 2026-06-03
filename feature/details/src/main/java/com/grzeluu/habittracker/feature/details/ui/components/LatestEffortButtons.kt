@@ -39,4 +39,4 @@ fun LatestEffortButtons(
 
 @Composable
 private fun Habit.shouldDailyButtonBeActive(date: LocalDate) =
-    (desirableDays.contains(Day.get(date.dayOfWeek.value)) || history.any { it.date == date })
+    (desirableDays.contains(Day.get(date.dayOfWeek.ordinal + 1)) || history.any { it.date == date })

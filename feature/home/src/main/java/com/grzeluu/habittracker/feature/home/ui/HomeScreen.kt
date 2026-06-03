@@ -58,7 +58,7 @@ private fun HabitsScreenContent(
     viewModel: HomeViewModel,
     onNavigateToDetails: (habitId: Long) -> Unit
 ) {
-    val pagerState = rememberPagerState(pageCount = { 7 }, initialPage = data.selectedDay.dayOfWeek.value - 1)
+    val pagerState = rememberPagerState(pageCount = { 7 }, initialPage = data.selectedDay.dayOfWeek.ordinal)
     val coroutineScope = rememberCoroutineScope()
 
     LaunchedEffect(pagerState.currentPage) {
@@ -77,7 +77,7 @@ private fun HabitsScreenContent(
             daysOfWeek = data.daysOfWeek,
             onDayClicked = {
                 coroutineScope.launch {
-                    pagerState.animateScrollToPage(it.dayOfWeek.value - 1)
+                    pagerState.animateScrollToPage(it.dayOfWeek.ordinal)
                 }
             }
         )

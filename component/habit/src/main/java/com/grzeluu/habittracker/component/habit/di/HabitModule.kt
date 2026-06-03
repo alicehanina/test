@@ -17,13 +17,13 @@ val habitModule = module {
     single<NotificationManager> { NotificationManagerImpl() }
     single<NotificationScheduler> { NotificationSchedulerImpl(get()) }
 
-    factory { AddOrUpdateHabitUseCase(get()) }
+    factory { AddOrUpdateHabitUseCase(get(), get(), get(), get()) }
     factory { CheckIfHabitsAreAddedUseCase(get()) }
-    factory { DeleteHabitUseCase(get()) }
+    factory { DeleteHabitUseCase(get(), get(), get()) }
     factory { GetDailyHabitInfosUseCase(get()) }
     factory { GetHabitsNotificationsUseCase(get()) }
     factory { GetHabitsUseCase(get()) }
     factory { GetHabitUseCase(get()) }
-    factory { MarkHabitAsArchiveUseCase(get()) }
-    factory { SaveHabitHistoryEntryUseCase(get()) }
+    factory { MarkHabitAsArchiveUseCase(get(), get(), get(), get()) }
+    factory { SaveHabitHistoryEntryUseCase(get(), get(), get(), get()) }
 }
